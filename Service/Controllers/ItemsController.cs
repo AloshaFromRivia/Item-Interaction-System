@@ -25,6 +25,7 @@ namespace CatalogService.Controllers
         public ActionResult<ItemDto> Get(int id)
         {
             var item = items.FirstOrDefault(i => i.Equals(id));
+            
 
             if(item == null)
             {
