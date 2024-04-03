@@ -27,7 +27,7 @@ namespace Service
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers();
+            services.AddControllers(opts=>opts.SuppressAsyncSuffixInActionNames=false);
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Service", Version = "v1" });
