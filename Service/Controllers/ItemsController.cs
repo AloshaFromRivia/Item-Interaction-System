@@ -14,9 +14,9 @@ namespace CatalogService.Controllers
     [Route("api/items")]
     public class ItemsController : ControllerBase
     {
-        private readonly IItemRepository _itemRepository;
+        private readonly IRepository<Item> _itemRepository;
 
-        public ItemsController(IItemRepository itemRepository)
+        public ItemsController(IRepository<Item> itemRepository)
         {
             _itemRepository = itemRepository;
         }
