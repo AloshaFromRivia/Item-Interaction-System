@@ -1,11 +1,12 @@
-﻿using CatalogService.Entities;
+﻿using Common;
 using MongoDB.Driver;
 using SharpCompress.Common;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace CatalogService.Repositories
+namespace Common.MongoDb
 {
     public class MongoRepository<T> : IRepository<T> where T : IEntity
     {
@@ -55,6 +56,16 @@ namespace CatalogService.Repositories
         {
             FilterDefinition<T> filter = filterBuilder.Eq(existingEntity => existingEntity.Id, id);
             await dbCollection.DeleteOneAsync(filter);
+        }
+
+        public async Task<IReadOnlyCollection<T>> GetAllAsync(Expression<Func<T, bool>> filter)
+        {
+            return await dbCollection.Find(filter).ToListAsync();
+        }
+
+        public async Task<T> GetAsync(Expression<Func<T, bool>> filter)
+        {
+            return await dbCollection.Find(filter).FirstOrDefaultAsync();
         }
     }
 }

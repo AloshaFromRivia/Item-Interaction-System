@@ -1,5 +1,5 @@
 ﻿using CatalogService.Entities;
-using CatalogService.Repositories;
+using Common;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;

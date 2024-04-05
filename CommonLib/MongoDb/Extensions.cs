@@ -1,13 +1,13 @@
-﻿using CatalogService.Settings;
+﻿using Common.Settings;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MongoDB.Bson.Serialization.Serializers;
 using MongoDB.Bson.Serialization;
 using MongoDB.Bson;
 using MongoDB.Driver;
-using CatalogService.Entities;
+using Common;
 
-namespace CatalogService.Repositories
+namespace Common.MongoDb
 {
     public static class Extensions
     {

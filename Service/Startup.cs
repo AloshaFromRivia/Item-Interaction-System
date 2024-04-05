@@ -1,6 +1,6 @@
 using CatalogService.Entities;
-using CatalogService.Repositories;
-using CatalogService.Settings;
+using Common.MongoDb;
+using Common.Settings;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
