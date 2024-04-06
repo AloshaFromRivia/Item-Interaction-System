@@ -1,11 +1,11 @@
-﻿using CatalogService.Entities;
+﻿using Catalog.Entities;
 using Common;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using static CatalogService.Dtos;
+using static Catalog.Dtos;
 
 namespace Catalog.Controllers
 {

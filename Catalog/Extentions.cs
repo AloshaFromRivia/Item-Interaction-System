@@ -1,6 +1,6 @@
-﻿using CatalogService.Entities;
+﻿using Catalog.Entities;
 using System.Runtime.CompilerServices;
-using static CatalogService.Dtos;
+using static Catalog.Dtos;
 
 namespace Catalog
 {
