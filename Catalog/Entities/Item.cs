@@ -1,7 +1,7 @@
 ﻿using Common;
 using System;
 
-namespace CatalogService.Entities
+namespace Catalog.Entities
 {
     public class Item : IEntity
     {

@@ -2,7 +2,7 @@
 using System.Runtime.CompilerServices;
 using static CatalogService.Dtos;
 
-namespace CatalogService
+namespace Catalog
 {
     public static class Extentions
     {

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using static CatalogService.Dtos;
 
-namespace CatalogService.Controllers
+namespace Catalog.Controllers
 {
 
     [ApiController]

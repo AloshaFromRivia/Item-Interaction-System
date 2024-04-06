@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace CatalogService
+namespace Catalog
 {
     public class Dtos
     {
