@@ -1,4 +1,5 @@
 using Common.MongoDb;
+using Inventory.Clients;
 using Inventory.Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -31,6 +32,11 @@ namespace Inventory
 
             services.AddMongo()
                 .AddMongoRepository<InventoryItem>("invenotyitems");
+
+            services.AddHttpClient<CatalogClient>(client=>
+            {
+                client.BaseAddress= new Uri("https://localhost:5001");
+            });
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

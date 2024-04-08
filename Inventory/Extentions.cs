@@ -5,9 +5,9 @@ namespace Inventory
 {
     public static class Extentions
     {
-        public static InventoryItemDto AsDto(this InventoryItem item)
+        public static InventoryItemDto AsDto(this InventoryItem item, string name, string description)
         {
-            return new InventoryItemDto(item.CatalogItemId,item.Quantity,item.AccuiredDate);
+            return new InventoryItemDto(item.CatalogItemId,name,description,item.Quantity,item.AccuiredDate);
         }
     }
 }
