@@ -1,6 +1,9 @@
 using Catalog.Entities;
+using Catalog.Settings;
 using Common.MongoDb;
 using Common.Settings;
+using MassTransit;
+using MassTransit.Definition;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -39,6 +42,17 @@ namespace Catalog
             services.AddMongo()
                 .AddMongoRepository<Item>("items");
 
+            services.AddMassTransit(x =>
+            {
+                x.UsingRabbitMq((context, configurrator) =>
+                {
+                    var rabbitMQSettings = Configuration.GetSection(nameof(RabbitMQSettings)).Get<RabbitMQSettings>();
+                    configurrator.Host(rabbitMQSettings.Host);
+                    configurrator.ConfigureEndpoints(context, new KebabCaseEndpointNameFormatter(serviceSettings.ServiceName,false));
+                });
+            });
+
+            services.AddMassTransitHostedService();
 
             services.AddControllers(opts=>opts.SuppressAsyncSuffixInActionNames=false);
             services.AddSwaggerGen(c =>
